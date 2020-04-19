@@ -1,18 +1,21 @@
 package com.example.demo.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Component;
 
 @Component
+@RefreshScope
 @ConfigurationProperties("configuration")
 public class ConfigurationProjectProperties {
-	private String projectName;
+	private String messageBean;
 
-	public String getProjectName() {
-		return projectName;
+	public String getMessageBean() {
+		return messageBean;
 	}
 
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
+	public void setMessageBean(String messageBean) {
+		this.messageBean = messageBean;
 	}
+	
 }

@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -14,8 +13,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.example.demo.config.ConfigurationProjectProperties;
 
 @SpringBootApplication
 // @EnableConfigurationProperties
@@ -37,11 +34,6 @@ public class JavaNativeApplication {
 	  String getMessage() {
 	    return this.message;
 	  }
-	}
-
-	@Autowired
-	public JavaNativeApplication(ConfigurationProjectProperties cp) {
-		log.info("configurationProjectProperties.projectName = " + cp.getProjectName());
 	}
 
 	@Bean
